@@ -14,15 +14,19 @@ A zip file (lambda.zip) containing the lambda function code (lambda_function.py)
 
 Set-up Instructions:
 Configure main.tf (Resources needed for AWS)
+
 Configure variables.tf (Define the inputs terraform will utilize)
+
 Configure outputs.tf (Define the outputs (what is seen) after running terraform
+
 Configure terraform.tfvars (Provide values for the variables)
 
 Deployment:
-Initialize terraform by going to terraform-lambda-crom directory and run terraorm init
+Initialize terraform by going to terraform-lambda-cron directory and run terraorm init
+
 Run terraform plan and Runn terraform apply to see what will be created 
-verification: check that the lambda function is created in the AWS management console
-and in AWS cloudwatch there should be a rule that triggers the lambda function every 5 minutes
+
+verification: check that the lambda function is created in the AWS management console and in AWS cloudwatch there should be a rule that triggers the lambda function every 5 minutes
 
 (Please note that the terraform state file .tfstate will be automatically created and stored in the specified S3 bucket after running the terraform commands. This file is essential for tracking the state of the infrastructure)
 
