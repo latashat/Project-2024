@@ -17,7 +17,7 @@ variable "terraform_state_bucket" {
 variable "lambda_code_path" {
   description = "Path to the Lambda code zip file"
   type        = string
-  default    = "C:\Users\latas\OneDrive\Desktop\Project-2024\terraform\terraform-lambda-cron"
+  default    = "C:\Users\latas\OneDrive\Desktop\Project-2024\terraform\terraform-lambda-cron\lambda"
 }
 
 variable "lambda_function_name" {
