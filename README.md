@@ -5,7 +5,7 @@ I developed a terraform script to deploy an AWS lambda function that is triggere
 
 Terraform Lambda function with S3 Backend and CloudWatch
 
-Overview: This project utilizes Terraform to set up an AWS lambda function that runs every 5 minutes. The function's code and terraform's state file are stored securely in an Amazon S3 bucket together.
+Overview: This project utilizes Terraform to set up an AWS lambda function that runs every 5 minutes. The function's code and terraform's state file are stored securely separately in an Amazon S3 bucket.
 
 Requirements:
 Terraform
