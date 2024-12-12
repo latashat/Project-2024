@@ -3,9 +3,9 @@ terraform-lambda-cron
 
 I developed a terraform script to deploy an AWS lambda function that is triggered by a cron job every 5 minutes. The solution should ensure that both the lambda function code and the terraform state file are securely stored in an Amazon S3 bucket.
 
-Terraform Lambda fuction with S3 Backend and CloudWatch
+Terraform Lambda function with S3 Backend and CloudWatch
 
-Overview: This project utilizes Terraform to set up an AWS lambda function that runs every 5 minutes. The function's code and terraform's state file are stored securely in an Amazon S3 bucket together.
+Overview: This project utilizes Terraform to set up an AWS lambda function that runs every 5 minutes. The function's code and terraform's state file are stored securely separately in an Amazon S3 bucket.
 
 Requirements:
 Terraform
