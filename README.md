@@ -22,9 +22,9 @@ Configure outputs.tf (Define the outputs (what is seen) after running terraform
 Configure terraform.tfvars (Provide values for the variables)
 
 Deployment:
-Initialize terraform by going to terraform-lambda-cron directory and run terraorm init
+Initialize terraform by going to terraform-lambda-cron directory and run terraform init
 
-Run terraform plan and Runn terraform apply to see what will be created 
+Run terraform plan and Run terraform apply to see what will be created 
 
 verification: check that the lambda function is created in the AWS management console and in AWS cloudwatch there should be a rule that triggers the lambda function every 5 minutes
 
