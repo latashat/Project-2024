@@ -9,7 +9,11 @@ Overview: This project utilizes Terraform to set up an AWS lambda function that 
 
 Requirements:
 Terraform
+
 AWS CLI
+
+AWS Cloudwatch
+
 A zip file (lambda.zip) containing the lambda function code (lambda_function.py)
 
 Set-up Instructions:
