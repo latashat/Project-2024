@@ -8,7 +8,7 @@ terraform {
   required_version = ">= 1.2.0"
 
   backend "s3" {
-    bucket = var.s3_bucket
+    bucket = var.terraform_state_bucket
     key    = "terraform/state"
     region = var.region
     encrypt = true
@@ -19,8 +19,34 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_s3_bucket" "terraform_bucket" {
-  bucket = var.s3_bucket
+variable "region" {
+  description = "AWS region"
+  type        = string
+  default    = "us-east-1"
+}
+
+variable "lambda_code_bucket" {
+  description = "S3 bucket for Lambda code"
+  type        = string
+}
+
+variable "terraform_state_bucket" {
+  description = "S3 bucket for Terraform state"
+  type        = string
+}
+
+variable "lambda_code_path" {
+  description = "Path to the Lambda code zip file"
+  type        = string
+}
+
+variable "lambda_function_name" {
+  description = "Lambda function name"
+  type        = string
+}
+
+resource "aws_s3_bucket" "lambda_code_bucket" {
+  bucket = var.lambda_code_bucket
   acl    = "private"
 
   server_side_encryption_configuration {
@@ -33,7 +59,7 @@ resource "aws_s3_bucket" "terraform_bucket" {
 }
 
 resource "aws_s3_bucket_object" "lambda_code" {
-  bucket = aws_s3_bucket.terraform_bucket.bucket
+  bucket = aws_s3_bucket.lambda_code_bucket.bucket
   key    = "lambda.zip"
   source = var.lambda_code_path
 }

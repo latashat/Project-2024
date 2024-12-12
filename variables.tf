@@ -4,14 +4,18 @@ variable "region" {
   default    = "us-east-1"
 }
 
-variable "s3_bucket" {
-  description = "S3 bucket to store the Lambda code and Terraform state"
+variable "lambda_code_bucket" {
+  description = "S3 bucket to store the Lambda code"
   type        = string
-  default    = "lambda-code-bucket"
+}
+
+variable "terraform_state_bucket" {
+  description = "S3 bucket to store the Terraform state file"
+  type        = string
 }
 
 variable "lambda_code_path" {
-  description = "Path to the Lambda zip file"
+  description = "Path to the Lambda code zip file"
   type        = string
   default    = "C:\Users\latas\OneDrive\Desktop\Project-2024\terraform\terraform-lambda-cron"
 }
@@ -19,5 +23,4 @@ variable "lambda_code_path" {
 variable "lambda_function_name" {
   description = "Name of the Lambda function"
   type        = string
-  default    = "LambdaFunction"
 }
